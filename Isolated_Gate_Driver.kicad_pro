@@ -51,17 +51,14 @@
           "min_clearance": 0.5
         }
       },
-      "diff_pair_dimensions": [],
-      "drc_exclusions": [
-        [
-          "courtyards_overlap|100005000|106761866|0ae9bdf7-6487-482b-a596-6a2493623353|9c6375ac-700d-4745-ad04-d4b9af561b31",
-          ""
-        ],
-        [
-          "courtyards_overlap|100005000|76761866|0ae9bdf7-6487-482b-a596-6a2493623353|e49f03dd-78a7-4939-b8db-f01fa6b0afa8",
-          ""
-        ]
+      "diff_pair_dimensions": [
+        {
+          "gap": 0.0,
+          "via_gap": 0.0,
+          "width": 0.0
+        }
       ],
+      "drc_exclusions": [],
       "meta": {
         "version": 2
       },
@@ -126,9 +123,9 @@
       },
       "rules": {
         "max_error": 0.005,
-        "min_clearance": 0.0,
+        "min_clearance": 0.2,
         "min_connection": 0.0,
-        "min_copper_edge_clearance": 0.5,
+        "min_copper_edge_clearance": 0.2,
         "min_groove_width": 0.0,
         "min_hole_clearance": 0.25,
         "min_hole_to_hole": 0.25,
@@ -139,7 +136,7 @@
         "min_text_height": 0.8,
         "min_text_thickness": 0.08,
         "min_through_hole_diameter": 0.3,
-        "min_track_width": 0.0,
+        "min_track_width": 0.2,
         "min_via_annular_width": 0.1,
         "min_via_diameter": 0.5,
         "solder_mask_to_copper_clearance": 0.0,
@@ -189,7 +186,9 @@
           "td_width_to_size_filter_ratio": 0.9
         }
       ],
-      "track_widths": [],
+      "track_widths": [
+        0.0
+      ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
           "corner_radius_percentage": 80,
@@ -216,7 +215,12 @@
           "spacing": 0.6
         }
       },
-      "via_dimensions": [],
+      "via_dimensions": [
+        {
+          "diameter": 0.0,
+          "drill": 0.0
+        }
+      ],
       "zones_allow_external_fillets": true
     },
     "ipc2581": {
@@ -449,6 +453,7 @@
       "single_global_label": "ignore",
       "unannotated": "error",
       "unconnected_wire_endpoint": "warning",
+      "undefined_netclass": "error",
       "unit_value_mismatch": "error",
       "unresolved_variable": "error",
       "wire_dangling": "error"
@@ -459,7 +464,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "SN6505_Isolated_PSU.kicad_pro",
+    "filename": "Isolated_Gate_Driver.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -491,6 +496,9 @@
       "+5V": [
         "LV"
       ],
+      "-5V": [
+        "HV"
+      ],
       "-VDC": [
         "HV"
       ],
@@ -506,6 +514,12 @@
       "/V_{OUT}": [
         "LV"
       ],
+      "/gate": [
+        "HV"
+      ],
+      "/source": [
+        "HV"
+      ],
       "15V_HV": [
         "HV"
       ],
@@ -515,10 +529,16 @@
       "5V_HV": [
         "HV"
       ],
+      "Earth": [
+        "LV"
+      ],
       "GND": [
         "LV"
       ],
       "GND1": [
+        "HV"
+      ],
+      "Net-(C2-Pad1)": [
         "HV"
       ],
       "Net-(C5-Pad1)": [
@@ -550,6 +570,12 @@
       ],
       "Net-(D6-A)": [
         "HV"
+      ],
+      "Net-(D6-K)": [
+        "HV"
+      ],
+      "Net-(J1-Pin_1)": [
+        "LV"
       ],
       "Net-(J4-Pin_1)": [
         "HV"

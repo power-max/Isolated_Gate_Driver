@@ -34,3 +34,5 @@ PCBA
 #
 # Linux specific file to store KDE color folder
 .directory
+
+*.zip
